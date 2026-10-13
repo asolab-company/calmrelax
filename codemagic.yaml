@@ -34,6 +34,11 @@ workflows:
         script: |
           xcode-project use-profiles --project "Massage.xcodeproj"
 
+      - name: Set Build Number
+        script: |
+          # Встановлює номер білду 7 (або підтягує номер білду з Codemagic)
+          agvtool new-version -all ${BUILD_NUMBER:-7}
+
       - name: Build iOS ipa
         script: |
           xcode-project build-ipa \
