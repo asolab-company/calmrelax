@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23501" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="launch-controller">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23501"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <scene sceneID="launch-scene">
+            <objects>
+                <viewController id="launch-controller" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="launch-root">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="launch-background">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <accessibility key="accessibilityConfiguration"><bool key="isElement" value="NO"/></accessibility>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="launch-logo">
+                                <rect key="frame" x="31.5" y="254.5" width="330" height="330"/>
+                                <accessibility key="accessibilityConfiguration" label="Massage"><bool key="isElement" value="YES"/></accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="launch-logo" secondAttribute="height" id="logo-square"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="330" id="logo-max-width"/>
+                                    <constraint firstAttribute="width" priority="999" constant="330" id="logo-ideal-width"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Loading..." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="launch-loading">
+                                <rect key="frame" x="24" y="751" width="345" height="19"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <color key="textColor" red="0.61176" green="0.54510" blue="0.76863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="launch-safe"/>
+                        <color key="backgroundColor" red="0.87" green="0.82" blue="0.98" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="launch-background" firstAttribute="top" secondItem="launch-root" secondAttribute="top" id="bg-top"/>
+                            <constraint firstItem="launch-background" firstAttribute="bottom" secondItem="launch-root" secondAttribute="bottom" id="bg-bottom"/>
+                            <constraint firstItem="launch-background" firstAttribute="leading" secondItem="launch-root" secondAttribute="leading" id="bg-leading"/>
+                            <constraint firstItem="launch-background" firstAttribute="trailing" secondItem="launch-root" secondAttribute="trailing" id="bg-trailing"/>
+                            <constraint firstItem="launch-logo" firstAttribute="centerX" secondItem="launch-safe" secondAttribute="centerX" id="logo-center-x"/>
+                            <constraint firstItem="launch-logo" firstAttribute="centerY" secondItem="launch-safe" secondAttribute="centerY" constant="-19" id="logo-center-y"/>
+                            <constraint firstItem="launch-logo" firstAttribute="width" relation="lessThanOrEqual" secondItem="launch-safe" secondAttribute="width" constant="-48" id="logo-safe-width"/>
+                            <constraint firstItem="launch-loading" firstAttribute="leading" secondItem="launch-safe" secondAttribute="leading" constant="24" id="loading-leading"/>
+                            <constraint firstItem="launch-safe" firstAttribute="trailing" secondItem="launch-loading" secondAttribute="trailing" constant="24" id="loading-trailing"/>
+                            <constraint firstItem="launch-safe" firstAttribute="bottom" secondItem="launch-loading" secondAttribute="bottom" constant="48" id="loading-bottom"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="launch-responder" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Background" width="393" height="852"/>
+        <image name="logo" width="418" height="418"/>
+    </resources>
+</document>
